@@ -1,0 +1,30 @@
+body {
+    font-family: Lato, sans-serif;
+    margin: 32px;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    margin: auto;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 75%;
+}
+
+caption {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 24px;
+    color: rgb(57, 42, 196);
+}

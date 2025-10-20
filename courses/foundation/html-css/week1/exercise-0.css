@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e9eae8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #898f32;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #527385;
+    padding: 16px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #527385;
+    padding: 8px;
+}
+
+section {
+    padding: 1rem;
+}
+
+p {
+    margin-left: 1rem;
+    padding: 0.5rem;
+}
+
+ul,
+ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+}

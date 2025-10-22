@@ -42,10 +42,9 @@ header {
 .hero {
     position: relative;
     min-height: 50vh;
-    background-image: url(https://github.com/mervekindan/HYF-Assets/blob/main/top-view-fresh-vegetables-sliced-whole-along-with-olive-oil-dark-floor.jpg?raw=true);
-    background-size: cover;
-    background-position: center;
-    background-color: rgb(51, 51, 51);
+    background: rgb(51, 51, 51)
+        url("https://github.com/mervekindan/HYF-Assets/blob/main/top-view-fresh-vegetables-sliced-whole-along-with-olive-oil-dark-floor.jpg?raw=true")
+        center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -111,13 +110,13 @@ header {
     margin: 0.5rem 0;
 }
 
-.recent-posts a {
+.recent-posts__link {
     text-decoration: none;
     font-weight: bold;
     color: #3e5237;
 }
 
-.recent-posts a:hover {
+.recent-posts__link:hover {
     color: #7b8b62;
     text-decoration: underline;
     cursor: pointer;
@@ -169,7 +168,7 @@ footer a:hover {
     }
 
     .hero-content h1 {
-        font-size: clamp(32px 8vw, 64px);
+        font-size: clamp(32px, 8vw, 64px);
     }
 
     .hero-content p {
@@ -183,6 +182,6 @@ footer a:hover {
 
     aside {
         width: 90%;
-        pad: 1.5rem;
+        padding: 1.5rem;
     }
 }

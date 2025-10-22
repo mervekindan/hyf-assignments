@@ -28,3 +28,7 @@ caption {
     padding: 24px;
     color: rgb(57, 42, 196);
 }
+
+tbody tr:nth-child(odd) {
+    background-color: rgb(215, 212, 246);
+}

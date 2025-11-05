@@ -1,6 +1,6 @@
 console.log("I love pizza");
 const myFavoritePizza = "Margherita";
-let priceOfPizza = 89.9;
+const priceOfPizza = 89.9;
 const amountOfPizzas = 4;
 const isPizzaTakeaway = true;
 const totalPrice = priceOfPizza * amountOfPizzas;

@@ -19,8 +19,7 @@ function showStatus(activities) {
     }
 
     if (activities.length == 0) {
-        console.log("Add some activities before calling showStatus");
-        return;
+        return "Add some activities before calling showStatus";
     }
     if (totalTime >= usageLimitInMin) {
         console.log(

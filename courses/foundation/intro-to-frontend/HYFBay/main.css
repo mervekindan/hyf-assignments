@@ -1,20 +1,36 @@
 body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #f9fbfd;
+    font-family: "Open Sans", sans-serif;
+    background-color: #bbbbbb;
+    text-align: center;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
 h1,
 h2 {
-  margin: 0;
+    margin: 24px;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.info-p {
+    font-style: italic;
+}
+
+li {
+    background-color: #ffffff;
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
 }

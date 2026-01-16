@@ -12,25 +12,25 @@ body {
     margin-right: auto;
 }
 
-h1 {
+.main-heading {
     font-family: "Georgia", "Times New Roman", serif;
     font-size: 3rem;
     margin-bottom: 24px;
 }
 
-form {
+.house-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
 
-label {
+.name-label {
     font-size: 1.5rem;
     margin-bottom: 16px;
 }
 
-input {
+.name-input {
     font-size: 1.25rem;
     padding: 8px;
     margin-bottom: 24px;
@@ -38,7 +38,7 @@ input {
     border: 1px solid #ffffff;
 }
 
-button {
+.submit-button {
     font-size: 1.25rem;
     padding: 12px 24px;
     border: none;
@@ -46,11 +46,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    /* background-color: #343434;
-    color: #f8f8f8;
-    border: 1px solid #ffffff; */
+.submit-button:hover {
     box-shadow: inset 0 0 4px #000000;
+    transition: box-shadow 0.5s ease-out;
 }
 
 .result-text {

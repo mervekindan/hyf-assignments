@@ -7,10 +7,11 @@ const productList = document.querySelector(".product-list");
 
 // This should create the ul and the li's with the individual products details
 function renderProducts(products) {
-    for (let i = 0; i < products.length; i++) {
+    const productsLength = products.length;
+    for (let i = 0; i < productsLength; i++) {
         const li = document.createElement("li");
 
-        li.innerHTML = `<h3><bold>${products[i].name}</bold></h3>
+        li.innerHTML = `<h3><strong>${products[i].name}</strong></h3>
 <p>Price: ${products[i].price} dkk</p>
 <p>Rating: ${products[i].rating}</p>`;
 

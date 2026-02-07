@@ -3,13 +3,14 @@ import express from "express";
 import knexLibrary from "knex";
 
 const dbFile =
-    "C:UsersLenovoDesktopHYFhyf-assignmentscourses\foundationdatabases\tasks.sqlite3";
+    "C:\Users\Lenovo\Desktop\HYF\hyf-assignments\courses\foundation\databases\tasks.sqlite3";
 
 const knex = knexLibrary({
     client: "sqlite3",
     connection: {
         filename: dbFile,
     },
+    useNullAsDefault: true,
 });
 
 const app = express();

@@ -3,3 +3,6 @@ eggplant
 celery
 leek
 broccoli
+potatoes
+cauliflower
+onion

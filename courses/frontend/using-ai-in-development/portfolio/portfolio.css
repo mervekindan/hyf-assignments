@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --btn-bg: linear-gradient(90deg, #ff7a7a, #ffb86b);
+    --btn-color: #fff;
+}
+
+body {
+    transition: background-color 400ms ease, color 250ms ease;
+    font-family: poppins, sans-serif;
+    font-size: large;
+    line-height: 1.6;
+    background-color: rgb(166, 226, 242);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.25rem;
+}
+
+/* Centered content wrapper to constrain line length on large screens */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*Typography and Layout*/
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 2%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 1rem;
+    display: block;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    margin: 0 0.75rem 0.5rem;
+    text-align: left;
+    vertical-align: top;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+}
+
+/*Button Styles*/
+#colorBtn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 8px 32px;
+    border-radius: 999px;
+    border: none;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 220px;
+    width: auto;
+    white-space: nowrap;
+}
+
+#colorBtn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    ul {
+        padding-left: 0.5rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
+}

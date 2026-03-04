@@ -1,19 +1,21 @@
+// This script changes the background color to a random HSL value when the button is clicked.
 document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("colorBtn");
-    if (!btn) return;
+    const profilePhoto = document.querySelector(".profile-photo");
+
+    if (!profilePhoto) return;
 
     function pickRandomBackground() {
-        // Pick a random hue, use warm saturation and relatively light lightness
         const h = Math.floor(Math.random() * 360);
-        const s = 70; // percent
-        const l = 60; // percent (light enough so black text remains readable)
-        return `hsl(${h} ${s}% ${l}%)`;
+        const s = 70; // Saturation
+        const l = 60; // Lightness
+        return `hsl(${h}, ${s}%, ${l}%)`;
     }
 
-    btn.addEventListener("click", () => {
+    function changeBackgroundAutomatically() {
         const color = pickRandomBackground();
-        document.body.style.backgroundColor = color;
-        // Keep text readable by choosing dark text for our chosen lightness
-        document.body.style.color = "#111";
-    });
+        profilePhoto.style.backgroundColor = color;
+    }
+
+    // Change the background every 5 seconds
+    setInterval(changeBackgroundAutomatically, 2000);
 });

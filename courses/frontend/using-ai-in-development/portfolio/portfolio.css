@@ -28,7 +28,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 1.25rem;
 }
 
 .hero {
@@ -74,6 +73,7 @@ body {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    flex: 1;
 }
 
 .about-me {
@@ -152,6 +152,27 @@ li {
 
 li:hover {
     background: rgba(255, 255, 255, 0.4);
+}
+
+.footer {
+    background-color: var(--primary-700);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.social-link {
+    color: var(--secondary-300);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem 1rem;
+}
+
+.social-link:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {

@@ -33,6 +33,13 @@ body {
     padding: 1.25rem;
 }
 
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .profile-photo {
     transition:
         background-color 400ms ease,
@@ -41,10 +48,27 @@ body {
     height: 400px;
     border-radius: 50%;
     object-fit: cover;
-    margin-top: 2rem;
     margin-bottom: 1rem;
     background-color: var(--secondary-500);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-header {
+    transition:
+        background-color 400ms ease,
+        color 250ms ease;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-500);
+}
+
+.hero-p {
+    transition:
+        background-color 400ms ease,
+        color 250ms ease;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-500);
 }
 
 /* Centered content wrapper to constrain line length on large screens */

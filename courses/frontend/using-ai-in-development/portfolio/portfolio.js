@@ -1,6 +1,8 @@
 // This script changes the background color to a random HSL value when the button is clicked.
 document.addEventListener("DOMContentLoaded", () => {
     const profilePhoto = document.querySelector(".profile-photo");
+    const heroHeading = document.querySelector(".hero-header");
+    const heroParagraph = document.querySelector(".hero-p");
 
     if (!profilePhoto) return;
 
@@ -14,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function changeBackgroundAutomatically() {
         const color = pickRandomBackground();
         profilePhoto.style.backgroundColor = color;
+        heroHeading.style.color = color;
+        heroParagraph.style.color = color;
     }
 
     // Change the background every 5 seconds

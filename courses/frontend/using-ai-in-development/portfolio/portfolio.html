@@ -7,7 +7,6 @@
         <link rel="stylesheet" href="portfolio.css" />
     </head>
     <body>
-        <!-- Hero Section -->
         <header class="hero">
             <div class="hero-content">
                 <img
@@ -17,34 +16,74 @@
                 />
                 <h1>Hi, I'm Merve Kindan</h1>
                 <p>UX/UI Designer & Web Developer</p>
-                <a href="#projects" class="btn">View My Work</a>
+                <a href="#projects" class="projects-btn">View My Work</a>
             </div>
         </header>
-        <main class="container">
-            <h1>About Me</h1>
-            <p>
-                Hello! I'm Merve, a UX/UI designer with a background in interior
-                architecture, where I learned to shape spaces that feel
-                intuitive and meaningful. Over five years in the design industry
-                taught me how people interact with environments — lessons I now
-                bring into the digital world. As I transition into web
-                development, I'm passionate about blending aesthetics,
-                usability, and function to craft experiences that feel as
-                natural as stepping into a well-designed space.
-            </p>
-            <h2>My skills</h2>
-            <ul>
-                <li>Web Development</li>
-                <li>User Interface Design</li>
-                <li>Digital Illustration</li>
-            </ul>
-            <button
-                class="color-btn"
-                id="colorBtn"
-                aria-label="Change background color"
-            >
-                Change background
-            </button>
+        <main class="main-content">
+            <section class="about-me">
+                <h2 class="about-heading">About Me</h2>
+                <p class="about-p">
+                    Hello! I'm Merve, a UX/UI Designer and Web Developer with a
+                    background in interior architecture, where I learned to
+                    shape spaces that feel intuitive and meaningful. Over five
+                    years in the design industry taught me how people interact
+                    with environments — lessons I now bring into the digital
+                    world. As I transition into web development, I'm passionate
+                    about blending aesthetics, usability, and function to craft
+                    experiences that feel as natural as stepping into a
+                    well-designed space.
+                </p>
+            </section>
+            <section class="projects">
+                <h2 class="projects">My Projects</h2>
+                <ul class="project-list">
+                    <li class="project-item">
+                        <div class="project-card">
+                            <img
+                                src="images/flip-game.jpg"
+                                alt="Memory Game"
+                                class="project-img"
+                            />
+                            <h3 class="project-heading">Memory Game</h3>
+                            <p class="project-description">
+                                A fun and challenging memory game built with
+                                HTML, CSS, and JavaScript.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="project-card">
+                            <img
+                                src="images/portfolio.jpg"
+                                alt="Personal Portfolio Website"
+                                class="project-img"
+                            />
+                            <h3 class="project-heading">
+                                Personal Portfolio Website
+                            </h3>
+                            <p class="project-description">
+                                A responsive portfolio website showcasing my
+                                design and development work.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="skills">
+                <h2 class="skills-heading">My skills</h2>
+                <ul class="skill-list">
+                    <li class="skill-item">Web Development</li>
+                    <li class="skill-item">User Interface Design</li>
+                    <li class="skill-item">Digital Illustration</li>
+                </ul>
+                <button
+                    class="color-btn"
+                    id="colorBtn"
+                    aria-label="Change background color"
+                >
+                    Change background
+                </button>
+            </section>
         </main>
         <script src="portfolio.js" defer></script>
     </body>

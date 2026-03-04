@@ -5,8 +5,6 @@
 }
 
 :root {
-    --btn-bg: linear-gradient(90deg, #ff7a7a, #ffb86b);
-    --btn-color: #fff;
     --primary-700: #1a0f5a;
     --primary-500: #3720a8;
     --primary-300: #5c3ce0;
@@ -85,19 +83,53 @@ body {
     justify-content: center;
 }
 
+.projects {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projects-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.project-card {
+    width: 360px;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 16px;
+}
+
+.project-img {
+    width: 100%;
+    object-fit: fill;
+    border-radius: 8px;
+}
+
+.project-heading {
+    font-size: 1.25rem;
+}
+
+.project-description {
+    font-size: 1rem;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
 /*Typography and Layout*/
 h2 {
     font-size: 2.25rem;
-    margin: 1rem 1rem;
+    margin: 1rem auto;
 }
 
 h3 {
     font-size: 1.75rem;
     margin: 0.75rem 1rem;
-}
-
-p {
-    margin-bottom: 2%;
 }
 
 ul {

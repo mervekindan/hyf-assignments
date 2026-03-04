@@ -91,31 +91,6 @@ li:hover {
     background: rgba(255, 255, 255, 0.4);
 }
 
-/*Button Styles*/
-.color-btn {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 8px 32px;
-    border-radius: 999px;
-    border: none;
-    background: var(--btn-bg);
-    color: var(--btn-color);
-    cursor: pointer;
-    font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    max-width: 220px;
-    width: auto;
-    white-space: nowrap;
-}
-
-.color-btn:active {
-    transform: scale(0.98);
-}
-
-.color-btn:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-}
-
 @media (max-width: 600px) {
     body {
         padding: 0.5rem;

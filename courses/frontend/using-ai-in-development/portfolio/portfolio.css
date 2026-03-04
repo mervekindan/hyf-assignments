@@ -74,20 +74,26 @@ body {
 /* Centered content wrapper to constrain line length on large screens */
 .main-content {
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 1rem;
+}
+
+.about-me {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /*Typography and Layout*/
-h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+h2 {
+    font-size: 2.25rem;
+    margin: 1rem 1rem;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+h3 {
+    font-size: 1.75rem;
+    margin: 0.75rem 1rem;
 }
 
 p {

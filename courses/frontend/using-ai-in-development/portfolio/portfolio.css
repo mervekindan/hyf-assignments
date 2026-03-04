@@ -7,12 +7,15 @@
 :root {
     --btn-bg: linear-gradient(90deg, #ff7a7a, #ffb86b);
     --btn-color: #fff;
+    --primary-700: #1a0f5a;
     --primary-500: #3720a8;
     --primary-300: #5c3ce0;
-    --secondary-500: #ff7a7a;
+    --secondary-700: #ff5e00;
+    --secondary-500: #ff871f;
     --secondary-300: #ffb86b;
-    --accent-500: #88fa68;
-    --accent-300: #b3ff9c;
+    --accent-700: #7fff00;
+    --accent-500: #a2ff45;
+    --accent-300: #bcff7a;
 }
 
 body {
@@ -39,11 +42,12 @@ body {
     object-fit: cover;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    background-color: var(--secondary-500);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Centered content wrapper to constrain line length on large screens */
-.container {
+.main-content {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;

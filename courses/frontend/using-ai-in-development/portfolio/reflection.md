@@ -1,20 +1,44 @@
-1. Identify and share 3 new things you learned from AI in the above task.
+# List of improvements from Part A
 
-:root selector
-How to add styles to a button
-Better understood how flexbox works
+- Semantic structure to the HTML
+- Changing color feature by time
+- Footer and projects section
 
-2. Where did you have to tweak or correct Copilot’s suggestions to suit your needs?
+# ASCII diagram from Part A
 
-It created "my projects" section automatically when it read the portfolio, even though I didn't want it to. Added a lot of unnecessary explanation comments. And when I asked it to change just one thing, it added different features that it wanted.
+Portfolio Project
+├── HTML
+│ ├── Hero Section
+│ ├── About Me Section
+│ ├── Projects Section
+│ └── Footer
+├── CSS
+│ ├── Global Styles
+│ ├── Footer Styles
+│ └── Responsive Styles
+└── JavaScript
+├── Background Color Change
+└── Automatic Background Change
 
-3. How would you explain the difference between using Copilot to generate code for you vs. using it as an effective learning partner?
+# Learnings from Part A
 
-As a generator, it generate the code so quick that it saves time but hinders to learn.
-As an effective learning partner, it helps me understand which features do what.
+- Understood how to use :root selector
+- Learned to make improvements on a project that had already been started
+- Refreshed my knowledge
 
-4. Identify 3 risks of relying too much on AI tools when learning at HackYourFuture.
+# Three ethical issues and mitigations from Part B
 
-Implementing code without learning can create a desire to take the easy way out.
-May occur some problems or unwanted items that it created by Copilot, if the developer couldn't check the code.
-It reduces to learning and success satisfaction
+1. Inaccurate or misleading information
+
+- AI sometimes generates outdated and incorrect info
+- I do double-check for the important information
+
+2. GDPR and data privacy
+
+- AI is fed with the data that we constantly provide, which means it also uses our data that we provided
+- I avoid sensitive, confidential, and personal data with AI
+
+3. Over-reliance on AI
+
+- If developers rely on AI and become too dependent on it, they might stop developing their skills
+- I try to use AI for testing and debugging while developing

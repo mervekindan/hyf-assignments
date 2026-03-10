@@ -45525,9 +45525,9 @@ const movies = [
 const shortTitleBtn = document.querySelector(".short-button");
 const longTitleBtn = document.querySelector(".long-button");
 const eightiesBtn = document.querySelector(".eighties-button");
-const GoodFilmsBtn = document.querySelector(".good-button");
-const AverageFilmsBtn = document.querySelector(".average-button");
-const badFilmsBtn = document.querySelector(".bad-button");
+const GoodMoviesBtn = document.querySelector(".good-button");
+const AverageMoviesBtn = document.querySelector(".average-button");
+const badMoviesBtn = document.querySelector(".bad-button");
 const resultDiv = document.querySelector(".results");
 const seeMoreBtn = document.querySelector(".see-more-button");
 
@@ -45550,4 +45550,17 @@ eightiesBtn.addEventListener("click", () => {
         (movie) => movie.year <= 1989 && movie.year >= 1980,
     );
     resultDiv.textContent = eighties.length;
+});
+
+const moviesWithTag = movies.map((movie) => {
+    let tag;
+    if (movie.rating >= 7) {
+        tag = "Good";
+    } else if (movie.rating >= 4) {
+        tag = "Average";
+    } else {
+        tag = "Bad";
+    }
+
+    return { ...movie, tag };
 });

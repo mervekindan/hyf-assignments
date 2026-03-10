@@ -45564,3 +45564,15 @@ const moviesWithTag = movies.map((movie) => {
 
     return { ...movie, tag };
 });
+
+function renderByTag(tag) {
+    const filtered = moviesWithTag.filter((movie) => movie.tag === tag);
+
+    resultDiv.innerHTML = filtered
+        .map((movie) => `<p>${movie.title} (${movie.rating})</p>`)
+        .join("");
+}
+
+GoodMoviesBtn.addEventListener("click", () => renderByTag("Good"));
+AverageMoviesBtn.addEventListener("click", () => renderByTag("Average"));
+badMoviesBtn.addEventListener("click", () => renderByTag("Bad"));

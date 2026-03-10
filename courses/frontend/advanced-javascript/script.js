@@ -45544,3 +45544,10 @@ longTitleBtn.addEventListener("click", () => {
         .map((movie) => movie.title);
     resultDiv.textContent = longTitles.join(", ");
 });
+
+eightiesBtn.addEventListener("click", () => {
+    const eighties = movies.filter(
+        (movie) => movie.year <= 1989 && movie.year >= 1980,
+    );
+    resultDiv.textContent = eighties.length;
+});

@@ -45521,3 +45521,26 @@ const movies = [
         running_times: 5580,
     },
 ];
+
+const shortTitleBtn = document.querySelector(".short-button");
+const longTitleBtn = document.querySelector(".long-button");
+const eightiesBtn = document.querySelector(".eighties-button");
+const GoodFilmsBtn = document.querySelector(".good-button");
+const AverageFilmsBtn = document.querySelector(".average-button");
+const badFilmsBtn = document.querySelector(".bad-button");
+const resultDiv = document.querySelector(".results");
+const seeMoreBtn = document.querySelector(".see-more-button");
+
+shortTitleBtn.addEventListener("click", () => {
+    const shortTitles = movies
+        .filter((movie) => movie.title.length <= 10)
+        .map((movie) => movie.title);
+    resultDiv.textContent = shortTitles.join(", ");
+});
+
+longTitleBtn.addEventListener("click", () => {
+    const longTitles = movies
+        .filter((movie) => movie.title.length > 18)
+        .map((movie) => movie.title);
+    resultDiv.textContent = longTitles.join(", ");
+});

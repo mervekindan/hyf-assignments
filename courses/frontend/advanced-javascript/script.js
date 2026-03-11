@@ -10,20 +10,51 @@ const duplicatedWordsBtn = document.querySelector(".duplicated-words");
 const eightiesBtn = document.querySelector(".eighties-button");
 const keywordsBtn = document.querySelector(".keywords-button");
 const resultDiv = document.querySelector(".results");
-// const seeMoreBtn = document.querySelector(".see-more-button");
+const seeMoreBtn = document.querySelector(".see-more-button");
+
+let currentMovies = [];
+let visibleCount = 20;
+const step = 20;
+
+function renderMovies() {
+    const moviesToShow = currentMovies.slice(visibleCount - step, visibleCount);
+
+    resultDiv.innerHTML += moviesToShow
+        .map(
+            (movie) =>
+                `<div class="card">
+                <h3>${movie.title}</h3>
+                <p><b>Rating:</b> ${movie.rating}</p>
+                <p><b>Year:</b> ${movie.year}</p>
+                ${movie.tag ? `<p><b>Tag:</b> ${movie.tag}</p>` : ""}
+                </div>`,
+        )
+        .join("");
+
+    seeMoreBtn.style.display =
+        visibleCount >= currentMovies.length ? "none" : "block";
+}
+
+function showMovies(movieArray) {
+    currentMovies = movieArray;
+    visibleCount = step;
+    resultDiv.innerHTML = "";
+    renderMovies();
+}
+
+seeMoreBtn.addEventListener("click", () => {
+    visibleCount += step;
+    renderMovies();
+});
 
 shortTitleBtn.addEventListener("click", () => {
-    const shortTitles = movies
-        .filter((movie) => movie.title.length <= 10)
-        .map((movie) => movie.title);
-    resultDiv.textContent = shortTitles.join(", ");
+    const shortTitles = movies.filter((movie) => movie.title.length <= 10);
+    showMovies(shortTitles);
 });
 
 longTitleBtn.addEventListener("click", () => {
-    const longTitles = movies
-        .filter((movie) => movie.title.length > 18)
-        .map((movie) => movie.title);
-    resultDiv.textContent = longTitles.join(", ");
+    const longTitles = movies.filter((movie) => movie.title.length > 18);
+    showMovies(longTitles);
 });
 
 eightiesBtn.addEventListener("click", () => {
@@ -48,10 +79,7 @@ const moviesWithTag = movies.map((movie) => {
 
 function renderByTag(tag) {
     const filtered = moviesWithTag.filter((movie) => movie.tag === tag);
-
-    resultDiv.innerHTML = filtered
-        .map((movie) => `<p>${movie.title} (${movie.rating})</p>`)
-        .join("");
+    showMovies(filtered);
 }
 
 goodMoviesBtn.addEventListener("click", () => renderByTag("Good"));
@@ -61,11 +89,8 @@ badMoviesBtn.addEventListener("click", () => renderByTag("Bad"));
 //Using chaining, first filter the movies array to only contain the movies rated higher than 6.
 // Now map the movies array to only the rating of the movies.
 ratingsBtn.addEventListener("click", () => {
-    const highlyRatedMovies = movies
-        .filter((movie) => movie.rating > 6)
-        .map((movie) => movie.rating);
-
-    resultDiv.textContent = highlyRatedMovies;
+    const highlyRatedMovies = movies.filter((movie) => movie.rating > 6);
+    showMovies(highlyRatedMovies);
 });
 
 keywordsBtn.addEventListener("click", () => {
@@ -75,7 +100,7 @@ keywordsBtn.addEventListener("click", () => {
             movie.title.toLowerCase().includes("alien") ||
             movie.title.toLowerCase().includes("benjamin"),
     );
-    resultDiv.innerHTML = `<b>${moviesWithKeywords.length}</b> movies contains <b>"Surfer", "Alien"</b> or <b>"Benjamin"</b> keywords in the title`;
+    resultDiv.innerHTML = `<b>${moviesWithKeywords.length}</b>movies contains<b>"Surfer", "Alien"</b>or<b>"Benjamin"</b>keywords in the title`;
 });
 
 duplicatedWordsBtn.addEventListener("click", () => {
@@ -87,7 +112,5 @@ duplicatedWordsBtn.addEventListener("click", () => {
         );
     });
 
-    resultDiv.textContent = duplicatedWordMovies
-        .map((movie) => movie.title)
-        .join(", ");
+    showMovies(duplicatedWordMovies);
 });

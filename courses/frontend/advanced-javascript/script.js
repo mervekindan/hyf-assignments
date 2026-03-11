@@ -1,14 +1,14 @@
 import { movies } from "./movies.js";
-console.log(movies);
 
 const shortTitleBtn = document.querySelector(".short-button");
 const longTitleBtn = document.querySelector(".long-button");
 const eightiesBtn = document.querySelector(".eighties-button");
-const GoodMoviesBtn = document.querySelector(".good-button");
-const AverageMoviesBtn = document.querySelector(".average-button");
+const keywordsBtn = document.querySelector(".keywords-button");
+const goodMoviesBtn = document.querySelector(".good-button");
+const averageMoviesBtn = document.querySelector(".average-button");
 const badMoviesBtn = document.querySelector(".bad-button");
 const resultDiv = document.querySelector(".results");
-const seeMoreBtn = document.querySelector(".see-more-button");
+// const seeMoreBtn = document.querySelector(".see-more-button");
 
 shortTitleBtn.addEventListener("click", () => {
     const shortTitles = movies
@@ -26,7 +26,7 @@ longTitleBtn.addEventListener("click", () => {
 
 eightiesBtn.addEventListener("click", () => {
     const eighties = movies.filter(
-        (movie) => movie.year <= 1989 && movie.year >= 1980,
+        (movie) => movie.year >= 1980 && movie.year <= 1989,
     );
     resultDiv.innerHTML = `<b>${eighties.length}</b> movies were made from 1980 to 1989`;
 });
@@ -52,6 +52,26 @@ function renderByTag(tag) {
         .join("");
 }
 
-GoodMoviesBtn.addEventListener("click", () => renderByTag("Good"));
-AverageMoviesBtn.addEventListener("click", () => renderByTag("Average"));
+goodMoviesBtn.addEventListener("click", () => renderByTag("Good"));
+averageMoviesBtn.addEventListener("click", () => renderByTag("Average"));
 badMoviesBtn.addEventListener("click", () => renderByTag("Bad"));
+
+//Using chaining, first filter the movies array to only contain the movies rated higher than 6.
+// Now map the movies array to only the rating of the movies.
+const highlyRatedMovies = movies
+    .filter((movie) => movie.rating > 6)
+    .map((movie) => movie.rating);
+
+console.log(highlyRatedMovies);
+
+keywordsBtn.addEventListener("click", () => {
+    const moviesWithKeywords = movies.filter(
+        (movie) =>
+            movie.title.toLowerCase().includes("surfer") ||
+            movie.title.toLowerCase().includes("alien") ||
+            movie.title.toLowerCase().includes("benjamin"),
+    );
+    resultDiv.innerHTML = `<b>${moviesWithKeywords.length}</b> movies contains <b>"Surfer", "Alien"</b> or <b>"Benjamin"</b> keywords in the title`;
+});
+
+console.log(moviesWithKeywords);

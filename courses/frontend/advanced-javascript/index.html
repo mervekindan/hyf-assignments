@@ -7,39 +7,31 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header class="hero">
-            <div class="hero-content">
-                <h1 class="hero-heading">Movie Generator</h1>
-                <p class="hero-p">Let's choose a movie for you.</p>
-            </div>
-        </header>
-        <main>
-            <div class="title-length">
-                <h2>Choose movies based on title length</h2>
-                <button class="short-button">Short title</button>
-                <button class="long-button">Long title</button>
-            </div>
-            <div class="how-many-movies">
-                <h2>
-                    How many movies are there according to the buttons below?
-                </h2>
-                <button class="eighties-button">80's Movies</button>
-                <p>
-                    How many movies contain
-                    <b>"Surfer", "Alien"</b>, or <b>"Benjamin"</b> in the title?
-                </p>
-                <button class="keywords-button">Movies with keywords</button>
-            </div>
-            <div class="year-of-made">
-                <h2>Choose movies based on the ratings</h2>
-                <button class="good-button">Good</button>
-                <button class="average-button">Average</button>
-                <button class="bad-button">Bad</button>
-            </div>
-            <div class="results">
-                <button class="see-more-button">See more...</button>
-            </div>
-        </main>
+        <div class="hero-content">
+            <h1 class="hero-heading">Movie Generator</h1>
+            <p class="hero-p">Let's choose a movie for you.</p>
+        </div>
+        <div class="buttons">
+            <button class="short-button">Short title</button>
+            <button class="long-button">Long title</button>
+            <button class="good-button">Good</button>
+            <button class="average-button">Average</button>
+            <button class="bad-button">Bad</button>
+            <button class="rating-above-6">Ratings above 6</button>
+            <button class="duplicated-words">Duplicated words</button>
+        </div>
+        <div class="movies-count">
+            <p>How many movies were made in 80's?</p>
+            <button class="eighties-button">80's Movies</button>
+            <p>
+                How many movies contain
+                <b>"Surfer", "Alien"</b>, or <b>"Benjamin"</b> in the title?
+            </p>
+            <button class="keywords-button">Movies with keywords</button>
+        </div>
+        <div class="results">
+            <button class="see-more-button">See more...</button>
+        </div>
         <script type="module" src="script.js"></script>
     </body>
 </html>

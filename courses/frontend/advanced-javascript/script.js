@@ -2,11 +2,13 @@ import { movies } from "./movies.js";
 
 const shortTitleBtn = document.querySelector(".short-button");
 const longTitleBtn = document.querySelector(".long-button");
-const eightiesBtn = document.querySelector(".eighties-button");
-const keywordsBtn = document.querySelector(".keywords-button");
 const goodMoviesBtn = document.querySelector(".good-button");
 const averageMoviesBtn = document.querySelector(".average-button");
 const badMoviesBtn = document.querySelector(".bad-button");
+const ratingsBtn = document.querySelector(".rating-above-6");
+const duplicatedWordsBtn = document.querySelector(".duplicated-words");
+const eightiesBtn = document.querySelector(".eighties-button");
+const keywordsBtn = document.querySelector(".keywords-button");
 const resultDiv = document.querySelector(".results");
 // const seeMoreBtn = document.querySelector(".see-more-button");
 
@@ -58,11 +60,13 @@ badMoviesBtn.addEventListener("click", () => renderByTag("Bad"));
 
 //Using chaining, first filter the movies array to only contain the movies rated higher than 6.
 // Now map the movies array to only the rating of the movies.
-const highlyRatedMovies = movies
-    .filter((movie) => movie.rating > 6)
-    .map((movie) => movie.rating);
+ratingsBtn.addEventListener("click", () => {
+    const highlyRatedMovies = movies
+        .filter((movie) => movie.rating > 6)
+        .map((movie) => movie.rating);
 
-console.log(highlyRatedMovies);
+    resultDiv.textContent = highlyRatedMovies;
+});
 
 keywordsBtn.addEventListener("click", () => {
     const moviesWithKeywords = movies.filter(
@@ -74,4 +78,16 @@ keywordsBtn.addEventListener("click", () => {
     resultDiv.innerHTML = `<b>${moviesWithKeywords.length}</b> movies contains <b>"Surfer", "Alien"</b> or <b>"Benjamin"</b> keywords in the title`;
 });
 
-console.log(moviesWithKeywords);
+duplicatedWordsBtn.addEventListener("click", () => {
+    const duplicatedWordMovies = movies.filter((movie) => {
+        const words = movie.title.toLowerCase().split(" ");
+
+        return words.some(
+            (word) => words.indexOf(word) !== words.lastIndexOf(word),
+        );
+    });
+
+    resultDiv.textContent = duplicatedWordMovies
+        .map((movie) => movie.title)
+        .join(", ");
+});

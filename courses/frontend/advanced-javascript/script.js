@@ -45549,7 +45549,7 @@ eightiesBtn.addEventListener("click", () => {
     const eighties = movies.filter(
         (movie) => movie.year <= 1989 && movie.year >= 1980,
     );
-    resultDiv.textContent = eighties.length;
+    resultDiv.innerHTML = `<b>${eighties.length}</b> movies were made from 1980 to 1989`;
 });
 
 const moviesWithTag = movies.map((movie) => {

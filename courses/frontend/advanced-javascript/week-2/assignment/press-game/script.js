@@ -4,8 +4,8 @@ const scoreS = document.querySelector(".score-s");
 const scoreL = document.querySelector(".score-l");
 const statusOfGame = document.querySelector(".game-status");
 
-const confettiS = { target: "confetti-s" };
-const confettiL = { target: "confetti-l" };
+const confettiS = { target: "confetti-s", max: 200, size: 2.5 };
+const confettiL = { target: "confetti-l", max: 200, size: 2.5 };
 
 const sConfetti = new ConfettiGenerator(confettiS);
 const lConfetti = new ConfettiGenerator(confettiL);

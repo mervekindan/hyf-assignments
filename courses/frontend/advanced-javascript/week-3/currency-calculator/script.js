@@ -2,6 +2,7 @@ const amountInput = document.getElementById("amount");
 const fromCurrency = document.getElementById("from");
 const toCurrency = document.getElementById("to");
 const resultOutput = document.getElementById("result");
+const swapButton = document.getElementById("swap");
 
 let rates = {};
 
@@ -49,5 +50,13 @@ function convert() {
 amountInput.addEventListener("input", convert);
 fromCurrency.addEventListener("change", convert);
 toCurrency.addEventListener("change", convert);
+
+swapButton.addEventListener("click", () => {
+    const temp = fromCurrency.value;
+    fromCurrency.value = toCurrency.value;
+    toCurrency.value = temp;
+
+    convert();
+});
 
 getRates();

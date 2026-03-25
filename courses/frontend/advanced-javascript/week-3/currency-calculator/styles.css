@@ -54,3 +54,11 @@ p {
     padding: 12px;
     border-radius: 4px;
 }
+
+.swap-button {
+    background: none;
+    color: rgb(248, 237, 224);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}

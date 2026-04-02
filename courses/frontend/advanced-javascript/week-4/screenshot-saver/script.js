@@ -1,4 +1,4 @@
-import { RAPID_API_KEY, CRUDCRUD_URL } from ".secret.js";
+import { RAPID_API_KEY, CRUDCRUD_URL } from "./secret.js";
 const crudUrl = `${CRUDCRUD_URL}/screenshots`;
 
 let currentScreenshot = null;

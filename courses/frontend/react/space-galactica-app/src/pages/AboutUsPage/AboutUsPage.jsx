@@ -1,5 +1,6 @@
 import styles from "./AboutUsPage.module.css";
 import { ValueCard } from "../../components/ValueCard.jsx";
+import { PartnerLogo } from "../../components/PartnerLogo";
 // 🧑🏽‍🚀 Task - Week 1
 // After you are finished with creating the page, move the OurValues, OurCrew, OurPartners components into their own files in this folder.
 // Import and use the components from the newly created files.
@@ -54,13 +55,42 @@ const OurCrew = () => {
     return <p> ADD OUR CREW HERE </p>;
 };
 
+const partners = [
+    {
+        id: 1,
+        alt: "alphabet-logo",
+        src: "/business_partners/alphabet-logo.png",
+    },
+    { id: 2, alt: "amazon-logo", src: "/business_partners/amazon_logo.png" },
+    { id: 3, alt: "cbc-logo", src: "/business_partners/CBC_Logo_White.png" },
+    {
+        id: 4,
+        alt: "microsoft-logo",
+        src: "/business_partners/Microsoft-Logo-white.png",
+    },
+    { id: 5, alt: "nyu-logo", src: "/business_partners/nyu-logo.png" },
+    {
+        id: 6,
+        alt: "queens-logo",
+        src: "/business_partners/QueensLogo_white.png",
+    },
+    { id: 7, alt: "samsung-logo", src: "/business_partners/samsung-logo.png" },
+    { id: 8, alt: "sodexo-logo", src: "/business_partners/sodexo-logo.png" },
+];
+
 const OurPartners = () => {
     // 🧑🏽‍🚀 Task - Week 1
     // Create the "Our Partners section".
     // Use the descriptions provided in /src/pages/AboutUsPage/README.md.
     // Use the pictures from /public/business_partners.
     // Some inspiration ideas can be found in /data/inspiration_about_us.
-    return <p> ADD OUR PARTNERS HERE </p>;
+    return (
+        <div className={styles.partnerLogosContainer}>
+            {partners.map((partner) => (
+                <PartnerLogo key={partner.id} {...partner} />
+            ))}
+        </div>
+    );
 };
 
 export const Crew = () => {
@@ -87,6 +117,10 @@ export const Crew = () => {
                 <section className="card">
                     <h2>The crew</h2>
                     <OurCrew />
+                </section>
+                <section className="card">
+                    <h2>Our Partners</h2>
+                    <OurPartners />
                 </section>
 
                 {/* 🧑🏽‍🚀 Task - Week 1 */}

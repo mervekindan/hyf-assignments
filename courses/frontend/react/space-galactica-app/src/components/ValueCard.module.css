@@ -1,0 +1,29 @@
+:root {
+    --primary-800: rgb(52, 55, 99, 0.5);
+    --primary-500: #828af8;
+    --primary-300: #b1b6fa;
+    --primary-100: #e1e2fd;
+}
+
+.card {
+    background-color: var(--primary-800);
+    padding: 16px;
+    margin-top: 32px;
+}
+
+.id {
+    font-size: 64px;
+    margin-bottom: 24px;
+    color: var(--primary-500);
+}
+
+.title {
+    margin-bottom: 24px;
+    color: var(--primary-300);
+    font-size: 1.2rem;
+}
+
+.description {
+    line-height: 1.5;
+    color: var(--primary-100);
+}

@@ -39,7 +39,7 @@ const OurValues = () => {
     // Use the descriptions provided in /src/pages/AboutUsPage/README.md.
     // Some inspiration ideas can be found in /data/inspiration_about_us.
     return (
-        <div className={styles.valueCardContainer}>
+        <div className={styles.valueCardsContainer}>
             {values.map((value) => (
                 <ValueCard id={value.id} {...value} />
             ))}
@@ -168,6 +168,11 @@ export const Crew = () => {
                 </section>
                 <section className="card">
                     <h2>Our Partners</h2>
+                    <p>
+                        We collaborate with some of the most respected names in
+                        the space and technology industries to make every
+                        journey extraordinary.
+                    </p>
                     <OurPartners />
                 </section>
 

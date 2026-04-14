@@ -3,28 +3,3 @@
     width: 100vw;
     height: 100vh;
 }
-
-.valueCardsContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.partnerLogosContainer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    margin-top: 48px;
-}
-
-.crewCardsContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    align-items: left;
-    justify-content: center;
-    margin-top: 48px;
-}

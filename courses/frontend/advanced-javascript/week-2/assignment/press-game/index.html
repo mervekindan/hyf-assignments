@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fastest Presser</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="game-info">
+            <h1 class="game-heading">Fastest Presser</h1>
+            <input
+                id="number-input"
+                type="number"
+                class="number-input"
+                placeholder="Enter a time in seconds"
+                min="1"
+                max="30"
+            />
+            <button class="start-button">Start Game</button>
+            <h2 class="game-status"></h2>
+        </div>
+        <div class="game-content">
+            <div class="player-s">
+                <h2 class="player-s-heading">Press S</h2>
+                <p class="score-s"></p>
+                <canvas id="confetti-s"></canvas>
+            </div>
+            <div class="player-l">
+                <h2 class="player-l-heading">Press L</h2>
+                <p class="score-l"></p>
+                <canvas id="confetti-l"></canvas>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

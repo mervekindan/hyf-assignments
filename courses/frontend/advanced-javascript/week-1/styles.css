@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./images/assortment-cinema-elements-red-background-with-copy-space.jpg");
+    background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+    margin: 64px 24px;
+}
+
+.hero-content {
+    padding: 12px;
+    background-color: rgba(235, 235, 235, 0.5);
+    border-radius: 24px;
+}
+
+p {
+    font-size: large;
+}
+
+.buttons {
+    display: flex;
+    margin: 16px auto;
+    gap: 12px;
+    justify-content: center;
+}
+
+button {
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    color: rgb(24, 24, 24);
+    background-color: rgb(222, 222, 222);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(220, 126, 126);
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 24px 64px;
+    justify-content: center;
+}
+
+.info-message {
+    justify-content: center;
+    padding: 24px;
+    background-color: rgba(252, 242, 242, 0.75);
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 18px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px 64px;
+}
+
+.see-more-button {
+    display: none;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    width: 200px;
+    background-color: rgba(252, 242, 242, 0.75);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.card p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    transition: 0.2s;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}

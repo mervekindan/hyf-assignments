@@ -114,6 +114,9 @@ code {
 button {
     color: rgb(207, 207, 234);
     background-color: rgb(8, 8, 220);
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 16px;
 }
 
 button:hover {

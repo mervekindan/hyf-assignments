@@ -1,8 +1,11 @@
-export function Card() {
+import "./card.css";
+
+export function Card({ title, description, imageUrl }) {
     return (
-        <article>
-            <h2>"Card Title"</h2>
-            <p>"This is a card component"</p>
-        </article>
+        <div className="card">
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <img src={imageUrl} alt="a picture" />
+        </div>
     );
 }

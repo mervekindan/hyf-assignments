@@ -1,0 +1,8 @@
+.crewCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: left;
+    justify-content: center;
+    margin-top: 48px;
+}

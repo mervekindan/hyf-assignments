@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import styles from "./Footer.module.css";
 import { SocialMediaItem } from "./SocialMediaItem";
+import { PageLink } from "./PageLink";
 
 export const Footer = () => {
     const { pathname } = useLocation();
@@ -15,17 +16,27 @@ export const Footer = () => {
                 </p>
                 <p>&copy; 2024 Galactica. All rights reserved.</p>
             </div>
-            {/* 🧑🏽‍🚀 Task - Week 2 */}
-            {/* Create a new list for the Pages. */}
-            {/* We need to use the <Link /> component here. */}
-            {/* <div className={styles.pages}>
-        <h3>Pages</h3>
-        <ul>
-          <li> <Link/> </li>
-          ...
-        </ul>
-      </div> */}
-            {/* Docs for the Link: https://reactrouter.com/api/components/Link#link. */}
+
+            <div className={styles.pages}>
+                <h3>Pages</h3>
+                <ul className={styles.footerList}>
+                    <li>
+                        <PageLink to="/" title="Home" />
+                    </li>
+                    <li>
+                        <PageLink to="/about_us" title="About Us" />
+                    </li>
+                    <li>
+                        <PageLink to="/destination" title="Destination" />
+                    </li>
+                    <li>
+                        <PageLink
+                            to="/nasa_collaboration"
+                            title="Nasa Collaboration"
+                        />
+                    </li>
+                </ul>
+            </div>
 
             <div className={styles.footerLinks}>
                 <h3>Follow us</h3>

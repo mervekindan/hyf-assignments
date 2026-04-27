@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import styles from "./Footer.module.css";
 import { SocialMediaItem } from "./SocialMediaItem";
 import { PageLink } from "./PageLink";
+import { navbarItems } from "./Navbar";
 
 export const Footer = () => {
     const { pathname } = useLocation();
@@ -20,21 +21,11 @@ export const Footer = () => {
             <div className={styles.pages}>
                 <h3>Pages</h3>
                 <ul className={styles.footerList}>
-                    <li>
-                        <PageLink to="/" title="Home" />
-                    </li>
-                    <li>
-                        <PageLink to="/about_us" title="About Us" />
-                    </li>
-                    <li>
-                        <PageLink to="/destination" title="Destination" />
-                    </li>
-                    <li>
-                        <PageLink
-                            to="/nasa_collaboration"
-                            title="Nasa Collaboration"
-                        />
-                    </li>
+                    {navbarItems.map((item) => (
+                        <li key={item.link}>
+                            <PageLink to={item.link} title={item.title} />
+                        </li>
+                    ))}
                 </ul>
             </div>
 

@@ -6,7 +6,7 @@ import { Badge } from "./Badge";
 import styles from "./Navbar.module.css";
 import { NavItem } from "./NavItem";
 
-const navbarItems = [
+export const navbarItems = [
     {
         title: "ABOUT US",
         link: "/about_us",

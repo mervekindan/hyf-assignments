@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./DestinationPage.module.css";
 import { PlanetsWishlistItem } from "./PlanetWishListItem";
 import { PlanetCard } from "../../components/PlanetCard";
+import { AddWishlistItem } from "./AddWishlistItem";
 
 const planetList = [
     {
@@ -90,6 +91,12 @@ export const Destinations = () => {
                         </>
                     )}
                 </section>
+
+                <section className="card">
+                    <h2>Destinations just for you</h2>
+                    <AddWishlistItem onAddWishlistItem={addPlanetToWishlist} />
+                </section>
+
                 <section className="card">
                     <h2>Possible destinations</h2>
                     {planetList.map((planet) => (

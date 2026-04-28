@@ -1,12 +1,23 @@
 .app {
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
 }
 
-
 .nasaPicOfTheDayImg {
-  width: auto;
-  height: 400px;
+    width: auto;
+    height: 400px;
+}
 
+.roverGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.roverImg {
+    height: 360px;
+}
+
+.roverPic {
+    padding: 16px;
 }

@@ -90,17 +90,6 @@ export const Destinations = () => {
                         </>
                     )}
                 </section>
-
-                {/* 🧑🏽‍🚀 Task - Week 3 */}
-                {/* Use the AddWishlistItem component here. */}
-
-                {/* 🧑🏽‍🚀 Task - Week 3
-          <h3>Your current wishlist</h3>
-          <div className={styles.wishlistList}>
-            ...
-            Use .map() to display the wishlist planets with the PlanetsWishlistItem component. 
-          </div> 
-          */}
                 <section className="card">
                     <h2>Possible destinations</h2>
                     {planetList.map((planet) => (

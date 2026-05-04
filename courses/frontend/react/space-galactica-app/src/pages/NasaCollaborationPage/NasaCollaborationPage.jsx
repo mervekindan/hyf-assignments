@@ -11,24 +11,45 @@ const NASA_URLs = {
 export const NasaCollaboration = () => {
     const [dailyImg, setDailyImg] = useState({});
     const [roverPhoto, setRoverPhoto] = useState({});
+    const [dailyImgError, setDailyImgError] = useState(null);
+    const [roverImgError, setRoverImgError] = useState(null);
+
+    useEffect(() => {
+        const fetchDailyImg = async () => {
+            try {
+                const response = await fetch(NASA_URLs.astronomyPicOfTheDay);
+
+                if (!response.ok) {
+                    throw new Error("Failed to fetch image");
+                }
+
+                const data = await response.json();
+                setDailyImg(data);
+            } catch (err) {
+                setDailyImgError(err.message);
+            }
+        };
+
+        fetchDailyImg();
+    }, []);
 
     useEffect(() => {
         const fetchRoverPhotos = async () => {
-            const roverPhotoResponse = await fetch(
-                NASA_URLs.marsRoverPhoto,
-            ).then((response) => response.json());
-            setRoverPhoto(roverPhotoResponse);
-        };
+            try {
+                const response = await fetch(NASA_URLs.marsRoverPhoto);
 
-        const fetchDailyImg = async () => {
-            const dailyImgResponse = await fetch(
-                NASA_URLs.astronomyPicOfTheDay,
-            ).then((response) => response.json());
-            setDailyImg(dailyImgResponse);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch rover photos");
+                }
+
+                const data = await response.json();
+                setRoverPhoto(data);
+            } catch (err) {
+                setRoverImgError(err.message);
+            }
         };
 
         fetchRoverPhotos();
-        fetchDailyImg();
     }, []);
 
     return (
@@ -37,15 +58,33 @@ export const NasaCollaboration = () => {
                 <h1>Collaboration with NASA</h1>
                 <section className="card">
                     <h2>Astronomy Picture of the day</h2>
-                    {dailyImg?.url ? (
+                    {dailyImgError ? (
+                        <p>Error: {dailyImgError}</p>
+                    ) : dailyImg ? (
                         <>
                             <h3>{dailyImg.title}</h3>
                             <p>{dailyImg.explanation}</p>
-                            <img
-                                className={styles.nasaPicOfTheDayImg}
-                                src={dailyImg.url}
-                                alt={dailyImg.title}
-                            />
+
+                            {dailyImg.media_type === "video" ? (
+                                <video
+                                    controls
+                                    autoPlay
+                                    muted
+                                    loop
+                                    className={styles.nasaPicOfTheDayImg}
+                                >
+                                    <source
+                                        src={dailyImg.url}
+                                        type="video/mp4"
+                                    />
+                                </video>
+                            ) : (
+                                <img
+                                    className={styles.nasaPicOfTheDayImg}
+                                    src={dailyImg.url}
+                                    alt={dailyImg.title}
+                                />
+                            )}
                         </>
                     ) : (
                         <p>Loading daily image...</p>
@@ -54,7 +93,9 @@ export const NasaCollaboration = () => {
 
                 <section className="card">
                     <h2>Rover Photos</h2>
-                    {roverPhoto?.photos?.length ? (
+                    {roverImgError ? (
+                        <p>Error: {roverImgError}</p>
+                    ) : roverPhoto?.photos?.length ? (
                         <div className={styles.roverGrid}>
                             {roverPhoto.photos.slice(0, 4).map((photo) => {
                                 return (

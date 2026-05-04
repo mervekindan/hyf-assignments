@@ -6,9 +6,10 @@ export const AddWishlistItem = ({ onAddWishlistItem }) => {
     const [name, setName] = useState("");
 
     const onAddItemPressed = () => {
-        if (!name.trim()) return;
+        const trimmedName = name.trim();
+        if (!trimmedName.trim()) return;
 
-        onAddWishlistItem(name, thumbnail);
+        onAddWishlistItem(trimmedName, thumbnail);
 
         setName("");
     };

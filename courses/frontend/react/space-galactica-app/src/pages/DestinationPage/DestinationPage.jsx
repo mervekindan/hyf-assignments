@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
 import styles from "./DestinationPage.module.css";
 import { PlanetsWishlistItem } from "./PlanetWishListItem";
 import { PlanetCard } from "../../components/PlanetCard";
 import { AddWishlistItem } from "./AddWishlistItem";
+import { WishlistContext } from "../../contexts/WishlistContext";
 
 const planetList = [
     {
@@ -36,11 +37,13 @@ const planetList = [
 ];
 
 export const Destinations = () => {
-    const [planetsWishlist, setPlanetsWishlist] = useState([]);
-
-    const isPlanetInWishlist = (planetName) => {
-        return planetsWishlist.some((planet) => planet.name === planetName);
-    };
+    const {
+        planetsWishlist,
+        isPlanetInWishlist,
+        addPlanetToWishlist,
+        removePlanetFromWishlist,
+        wishlistCount,
+    } = useContext(WishlistContext);
 
     const togglePlanetSelection = (name, thumbnail) => {
         if (isPlanetInWishlist(name)) {
@@ -50,29 +53,19 @@ export const Destinations = () => {
         }
     };
 
-    const addPlanetToWishlist = (name, thumbnail) => {
-        setPlanetsWishlist([...planetsWishlist, { name, thumbnail }]);
-    };
-
-    const removePlanetFromWishlist = (name) => {
-        setPlanetsWishlist(
-            planetsWishlist.filter((planet) => planet.name !== name),
-        );
-    };
-
     return (
         <div className="fullBGpicture">
             <main className="mainContent">
                 <h1>Travel destinations</h1>
                 <section className="card">
                     <h2>Wishlist</h2>
-                    {planetsWishlist.length === 0 ? (
+                    {wishlistCount === 0 ? (
                         <p>No planets in your wishlist :(</p>
                     ) : (
                         <>
                             <p>
-                                You have {planetsWishlist.length} planets in
-                                your wishlist
+                                You have {wishlistCount} planets in your
+                                wishlist
                             </p>
                             <div className={styles.wishlist}>
                                 {planetsWishlist.map((planet) => (
@@ -119,8 +112,3 @@ export const Destinations = () => {
 };
 
 export default Destinations;
-
-// 🧑🏽‍🚀 Task - Week 4 - part 2
-// Hate to break it to you, but you will have to make some changes to the code you already wrote.
-// Now that you have context, grab and use the context data in this.
-// You will need to replace some of the variables and functions with the ones from the context.
